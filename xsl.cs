@@ -6,12 +6,12 @@ using System.Xml;
 using System.Xml.XPath;
 using System.Xml.Xsl;
 
-namespace xsl
+namespace XslTools
 {
 	/// <summary>
-	/// Class to do main processing
+	/// Class to do main processing. Note: current assembly name is xsl
 	/// </summary>
-	public class xsl
+	public class xsl // ConsoleTool
 	{
 		/// <summary>
 		/// Main entry point for application
@@ -259,7 +259,7 @@ namespace xsl
 	}
 
 	/// <summary>
-	/// XSLT Extension Class
+	/// XSLT Extension Class - helpful for testing
 	/// </summary>
 	public class XsltExtension
 	{
