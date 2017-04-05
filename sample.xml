@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resume>
+  <personal>
+    <name>First Last</name>
+    <address>123 Hill St</address>
+    <city>Anycity</city>
+    <state>Colorado</state>
+    <st_ab>CO</st_ab>
+    <postal_code>80203</postal_code>
+    <country>USA</country>
+    <telephone>anyType</telephone>
+    <cell>123-456-7890</cell>
+    <email>email1@email1.com</email>
+  </personal>
+  <objective display="Objective">objective1</objective>
+  <employment_history display="Employment">
+    <employment>
+      <employer>employer1</employer>
+      <title>title1</title>
+      <date>
+        <start_year>2000</start_year>
+        <start_month>2</start_month>
+        <end_year>2004</end_year>
+        <end_month>8</end_month>
+      </date>
+      <duties>duties1</duties>
+      <url>url1</url>
+      <programming_languages>
+        <extensive>extensive1</extensive>
+        <other>other1</other>
+      </programming_languages>
+      <software_apps_os>software_apps_os1</software_apps_os>
+    </employment>
+    <employment>
+      <employer>employer2</employer>
+      <title>title2</title>
+      <date>
+        <start_year>2004</start_year>
+        <start_month>8</start_month>
+        <end_year>2009</end_year>
+        <end_month>12</end_month>
+      </date>
+      <duties>duties2</duties>
+      <url>url2</url>
+      <programming_languages>
+        <extensive>extensive2</extensive>
+        <other>other2</other>
+      </programming_languages>
+      <software_apps_os>software_apps_os2</software_apps_os>
+    </employment>
+    <employment>
+      <employer>employer3</employer>
+      <title>title3</title>
+      <date>
+        <start_year>2010</start_year>
+        <start_month>1</start_month>
+        <end_year>2014</end_year>
+        <end_month>9</end_month>
+      </date>
+      <duties>duties3</duties>
+      <url>url3</url>
+      <programming_languages>
+        <extensive>extensive3</extensive>
+        <other>other3</other>
+      </programming_languages>
+      <software_apps_os>software_apps_os3</software_apps_os>
+    </employment>
+  </employment_history>
+  <education display="Education">
+    <degree value="value1">
+      <university>
+        <name>name1</name>
+        <location>location1</location>
+        <url>url1</url>
+        <surl>surl1</surl>
+      </university>
+      <study>study1</study>
+      <date>
+        <start_year>1998</start_year>
+        <end_year>2002</end_year>
+      </date>
+    </degree>
+    <degree value="value2">
+      <university>
+        <name>name2</name>
+        <location>location2</location>
+        <url>url2</url>
+        <surl>surl2</surl>
+      </university>
+      <study>study2</study>
+      <date>
+        <start_year>2002</start_year>
+        <end_year>2004</end_year>
+      </date>
+    </degree>
+  </education>
+  <organizations display="Organizations">organizations1</organizations>
+  <hobbies display="Hobbies">hobbies1</hobbies>
+  <references display="References">
+    <reference>
+      <order>0</order>
+      <name>name1</name>
+      <business>business1</business>
+      <address>address1</address>
+      <city>city1</city>
+      <state>state1</state>
+      <st_ab>st_ab1</st_ab>
+      <postal_code>0</postal_code>
+      <country>country1</country>
+      <telephone>telephone1</telephone>
+      <email>email1</email>
+    </reference>
+    <reference>
+      <order>255</order>
+      <name>name2</name>
+      <business>business2</business>
+      <address>address2</address>
+      <city>city2</city>
+      <state>state2</state>
+      <st_ab>st_ab2</st_ab>
+      <postal_code>4294967295</postal_code>
+      <country>country2</country>
+      <telephone>telephone2</telephone>
+      <email>email2</email>
+    </reference>
+    <reference>
+      <order>1</order>
+      <name>name3</name>
+      <business>business3</business>
+      <address>address3</address>
+      <city>city3</city>
+      <state>state3</state>
+      <st_ab>st_ab3</st_ab>
+      <postal_code>1</postal_code>
+      <country>country3</country>
+      <telephone>telephone3</telephone>
+      <email>email3</email>
+    </reference>
+  </references>
+</resume>

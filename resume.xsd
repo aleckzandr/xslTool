@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="resume">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="personal">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" />
+							<xs:element name="address" type="xs:string" />
+							<xs:element name="city" type="xs:string" />
+							<xs:element name="state" type="xs:string" />
+							<xs:element name="st_ab" type="xs:string" />
+							<xs:element name="postal_code" type="xs:unsignedInt" />
+							<xs:element name="country" type="xs:string" />
+							<xs:element name="telephone" />
+							<xs:element name="cell" type="xs:string" />
+							<xs:element name="email" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="objective">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="display" type="xs:string" use="required" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="employment_history">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="employment">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="employer" type="xs:string" />
+										<xs:element name="title" type="xs:string" />
+										<xs:element name="date">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="start_year" type="xs:unsignedShort" />
+													<xs:element name="start_month" type="xs:unsignedByte" />
+													<xs:element name="end_year" type="xs:unsignedShort" />
+													<xs:element name="end_month" type="xs:unsignedByte" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="duties" type="xs:string" />
+										<xs:element name="url" type="xs:string" />
+										<xs:element name="programming_languages">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="extensive" type="xs:string" />
+													<xs:element minOccurs="0" name="other" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="software_apps_os" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="display" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="education">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="degree">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="university">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string" />
+													<xs:element name="location" type="xs:string" />
+													<xs:element name="url" type="xs:string" />
+													<xs:element name="surl" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="study" type="xs:string" />
+										<xs:element name="date">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="start_year" type="xs:unsignedShort" />
+													<xs:element name="end_year" type="xs:unsignedShort" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="value" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="display" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="organizations">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="display" type="xs:string" use="required" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="hobbies">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="display" type="xs:string" use="required" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="references">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="reference">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="order" type="xs:unsignedByte" />
+										<xs:element name="name" type="xs:string" />
+										<xs:element name="business" type="xs:string" />
+										<xs:element name="address" type="xs:string" />
+										<xs:element name="city" type="xs:string" />
+										<xs:element name="state" type="xs:string" />
+										<xs:element name="st_ab" type="xs:string" />
+										<xs:element name="postal_code" type="xs:unsignedInt" />
+										<xs:element name="country" type="xs:string" />
+										<xs:element name="telephone" type="xs:string" />
+										<xs:element name="email" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="display" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
