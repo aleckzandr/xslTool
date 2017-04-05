@@ -97,7 +97,7 @@
 						<xs:attribute name="display" type="xs:string" use="required" />
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="organizations">
+				<xs:element name="hobbies">
 					<xs:complexType>
 						<xs:simpleContent>
 							<xs:extension base="xs:string">
@@ -106,7 +106,7 @@
 						</xs:simpleContent>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="hobbies">
+				<xs:element name="github">
 					<xs:complexType>
 						<xs:simpleContent>
 							<xs:extension base="xs:string">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0" exclude-result-prefixes="ma xsl"
+<xsl:stylesheet version="2.0" exclude-result-prefixes="ma xsl"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:ma="http://aleckzandr.com"
 	extension-element-prefixes="ma">
@@ -38,6 +38,7 @@
 					<xsl:apply-templates select="education" />
 					<xsl:apply-templates select="organizations" />
 					<xsl:apply-templates select="hobbies" />
+					<xsl:apply-templates select="github" />
 					<xsl:apply-templates select="references" />
 					<xsl:if test="document('')/*/ma:printpdf = '0'">
 						<p class="idn">(<a><xsl:attribute name="href">javascript:onClick=displayDiv("ref");</xsl:attribute>view/hide References</a>, <xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
@@ -253,6 +254,46 @@
 		</div>
 	</xsl:template>
 
+	<xsl:template match="organizations">
+		<h4 xmlns="http://www.w3.org/1999/xhtml">
+			<xsl:value-of select="@display" />
+		</h4>
+		<xsl:call-template name="displayTabularData">
+			<xsl:with-param name="str" select="." />
+		</xsl:call-template>
+	</xsl:template>
+
+	<xsl:template match="github">
+		<h4 xmlns="http://www.w3.org/1999/xhtml">
+			<xsl:value-of select="@display" />
+		</h4>
+		<div class="div-cont" xmlns="http://www.w3.org/1999/xhtml">
+			<div class="div-row">
+				<div class="div-cel date">
+					<xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
+				</div>
+				<div class="div-cel cont">
+					<a>
+						<xsl:attribute name="href">
+							<xsl:value-of select="." />
+						</xsl:attribute>
+						<xsl:attribute name="style">font-weight: normal;</xsl:attribute>
+						<xsl:value-of select="." />
+					</a>
+				</div>
+			</div>
+		</div>
+	</xsl:template>
+
+	<xsl:template match="hobbies">
+		<h4 xmlns="http://www.w3.org/1999/xhtml">
+			<xsl:value-of select="@display" />
+		</h4>
+		<xsl:call-template name="displayTabularData">
+			<xsl:with-param name="str" select="." />
+		</xsl:call-template>
+	</xsl:template>
+
 	<xsl:template match="references">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<xsl:attribute name="id">ref</xsl:attribute>
@@ -287,22 +328,4 @@
 		</div>
 	</xsl:template>
 
-	<xsl:template match="organizations">
-		<h4 xmlns="http://www.w3.org/1999/xhtml">
-			<xsl:value-of select="@display" />
-		</h4>
-		<xsl:call-template name="displayTabularData">
-			<xsl:with-param name="str" select="." />
-		</xsl:call-template>
-	</xsl:template>
-
-	<xsl:template match="hobbies">
-		<h4 xmlns="http://www.w3.org/1999/xhtml">
-			<xsl:value-of select="@display" />
-		</h4>
-		<xsl:call-template name="displayTabularData">
-			<xsl:with-param name="str" select="." />
-		</xsl:call-template>
-	</xsl:template>
-	
 </xsl:stylesheet>

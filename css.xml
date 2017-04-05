@@ -1,7 +1,7 @@
 <style type="text/css">
 	body			{ color: #000; background: #fff; font-family: Garamond, "Times New Roman", serif; }
 	.main			{ width: 100%; border-left: 3px solid #0000AC; padding-left: 4px; }
-	a				{ font-weight: bold ; text-decoration: none; color: #000000; background: #FFFFFF; }
+	a				{ font-weight: bold; text-decoration: none; color: #000000; background: #FFFFFF; }
 	a:hover		{ color: #0000A9; background: #C0C0FF; }
 	h4				{ margin: 4px 0px 4px 0px; text-decoration: underline; clear: both; page-break-after: avoid; }
 	p				{ margin: 2px; padding: 0px; }

@@ -96,7 +96,10 @@
   </education>
   <organizations display="Organizations">organizations1</organizations>
   <hobbies display="Hobbies">hobbies1</hobbies>
-  <references display="References">
+
+  <github display="GitHub">https://github.com/</github>
+
+	<references display="References">
     <reference>
       <order>0</order>
       <name>name1</name>
