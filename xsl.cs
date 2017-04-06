@@ -20,9 +20,14 @@ namespace XslTools
 		[STAThread]
 		public static void Main(string[] args)
 		{
+			// if we use an "out" argument when we compile, i.e., "csc /out:xslt.exe xsl.cs"
+			// we write out the correct name to the console (like "xslt" in the example above)
+			var a = typeof(xsl).Assembly;
+			var sAssemblyName = a.FullName.Substring(0, a.FullName.IndexOf(','));
+
 			if (args.Length < 2)
 			{
-				Console.WriteLine("xsl input.xml input.xsl [outputfile] [n]");
+				Console.WriteLine(string.Format("{0} input.xml input.xsl [outputfile] [n]", sAssemblyName));
 				Console.WriteLine("[outputfile] & [n] optional");
 				Console.WriteLine("[1] ASCIIEncoding");
 				Console.WriteLine("[2] UnicodeEncoding default");
@@ -116,7 +121,7 @@ namespace XslTools
 			}
 			catch (Exception ex)
 			{
-				var errMessage = new StringBuilder(string.Format("xsl input.xml input.xsl [outputfile] [n]\nException Message: {0}\nSource: {1}", ex.Message, ex.Source));
+				var errMessage = new StringBuilder(string.Format("{0} input.xml input.xsl [outputfile] [n]\nException Message: {1}\nSource: {2}", sAssemblyName, ex.Message, ex.Source));
 
 				while (ex.InnerException != null)
 				{
