@@ -79,11 +79,13 @@ namespace XslTools
 				xslArg.AddParam("axslGMT", string.Empty, dt.ToUniversalTime().ToString("r"));
 				//xslArg.AddExtensionObject("http://aleckzandr.com/XsltExtension", new XsltExtension()); // for testing
 
-				//Create the XslTransform and load the stylesheet.
-				var xslt = new XslCompiledTransform(false); // XslCompiledTransform is "new" as of .NET 2.0 Framework! ;) this used to be "new XslTransform()"
+				// XslCompiledTransform is "new" as of .NET 2.0 Framework! ;) this used to be "new XslTransform()"
+				// Create the XslTransform and load the stylesheet.
+				var xslt = new XslCompiledTransform(false);
 
+				// todo: I originally wrote this for .NET Framework 1.1, not sure if CustomResolver is needed any more
 				// Loading: Allow document function and scripting in Xslt Setting, and passing our Custom XmlResolver
-				xslt.Load(args[1], new XsltSettings(true, true), new CustomResolver(path, xslBuilder.ToString())); // todo: I originally wrote this for .NET Framework 1.1, not sure if CustomResolver is needed any more
+				xslt.Load(args[1], new XsltSettings(true, true), new CustomResolver(path, xslBuilder.ToString()));
 
 				var xmlWrterSettings = xslt.OutputSettings.Clone();
 				xmlWrterSettings.CheckCharacters = false;
@@ -116,7 +118,9 @@ namespace XslTools
 						end = DateTime.Now.Ticks;
 					}
 
-					Console.WriteLine(string.Format("{0}\nXSL Transform completed in ~{1} milliseconds.", sb.ToString(), new TimeSpan(end - start).Milliseconds));
+					sb.Append(string.Format("\nXSL Transform completed in ~{0} milliseconds.", new TimeSpan(end - start).Milliseconds));
+
+					Console.WriteLine(sb.ToString());
 				}
 			}
 			catch (Exception ex)
