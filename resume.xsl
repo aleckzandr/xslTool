@@ -7,6 +7,8 @@
 	<ma:printpdf>0</ma:printpdf>
 	<ma:showvalidatorlink>1</ma:showvalidatorlink>
 	<ma:resumelink>sample.xml</ma:resumelink>
+	<ma:xsllink>https://github.com/aleckzandr/xslTool/blob/master/resume.xsl</ma:xsllink>
+	<ma:codelink>https://github.com/aleckzandr/xslTool/blob/master/xsl.cs</ma:codelink>
 
 	<ma:name monInt= "1">Jan.</ma:name>
 	<ma:name monInt= "2">Feb.</ma:name>
@@ -42,9 +44,11 @@
 					<xsl:apply-templates select="references" />
 					<xsl:if test="document('')/*/ma:printpdf = '0'">
 						<p class="idn">(<a><xsl:attribute name="href">javascript:onClick=displayDiv("ref");</xsl:attribute>view/hide References</a>, <xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
-							<a><xsl:attribute name="href"><xsl:value-of select="document('')/*/ma:resumelink"/></xsl:attribute>view XML</a>, <xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
-							<a><xsl:attribute name="href">resume.xsl</xsl:attribute>view XSL</a>, <xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
-							<a><xsl:attribute name="href">xsl.cs</xsl:attribute>view C# Code to do XSL transform</a>)</p>
+							<xsl:if test="document('')/*/ma:resumelink != ''">
+								<a><xsl:attribute name="href"><xsl:value-of select="document('')/*/ma:resumelink"/></xsl:attribute>view XML</a>, <xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
+							</xsl:if>
+							<a><xsl:attribute name="href"><xsl:value-of select="document('')/*/ma:xsllink"/></xsl:attribute>view XSL</a>, <xsl:text disable-output-escaping="yes">&amp;</xsl:text>nbsp;
+							<a><xsl:attribute name="href"><xsl:value-of select="document('')/*/ma:codelink"/></xsl:attribute>view C# Code to do XSL transform</a>)</p>
 							<xsl:if test="document('')/*/ma:showvalidatorlink = '1'">
 								<div>
 									<a href="https://validator.w3.org/#validate_by_upload">
