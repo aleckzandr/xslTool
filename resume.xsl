@@ -6,7 +6,7 @@
 
 	<ma:printpdf>0</ma:printpdf>
 	<ma:showvalidatorlink>1</ma:showvalidatorlink>
-	<ma:resumelink>sample.xml</ma:resumelink>
+	<ma:resumelink>https://github.com/aleckzandr/xslTool/blob/master/sample.xml</ma:resumelink><!-- resume.xml -->
 	<ma:xsllink>https://github.com/aleckzandr/xslTool/blob/master/resume.xsl</ma:xsllink>
 	<ma:codelink>https://github.com/aleckzandr/xslTool/blob/master/xsl.cs</ma:codelink>
 
@@ -201,7 +201,9 @@
 				</xsl:call-template><br />
 				<xsl:value-of select="duties" />
 				Programming languages used extensively: <xsl:value-of select="programming_languages/extensive" />
-				Other programming languages used: <xsl:value-of select="programming_languages/other" />
+				<xsl:if test="programming_languages/other">
+					Other programming languages used: <xsl:value-of select="programming_languages/other" />
+				</xsl:if>
 				Software/applications/OS used: <xsl:value-of select="software_apps_os" />
 			</div>
 		</div>		
